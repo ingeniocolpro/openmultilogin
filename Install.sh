@@ -239,7 +239,7 @@ chmod +x speedtest.py
 
 # Install Menu
 cd
-wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu"
+wget "https://raw.githubusercontent.com/ingeniocolpro/openmultilogin/master/menu"
 mv ./menu /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
 cd
