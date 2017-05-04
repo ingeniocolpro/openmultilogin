@@ -23,7 +23,7 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 service ssh restart
 
 # set repo
-wget -O /etc/apt/sources.list "https://github.com/ingeniocolpro/openmultilogin/blob/master/sources.list.debian7"
+wget -O /etc/apt/sources.list "https://raw.githubusercontent.com/ingeniocolpro/openmultilogin/master/sources.list.debian7"
 wget "http://www.dotdeb.org/dotdeb.gpg"
 cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
 
@@ -89,7 +89,7 @@ apt-get install openvpn -y
 wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/ingeniocolpro/openmultilogin/master/openvpn-debian.tar"
 cd /etc/openvpn/
 tar xf openvpn.tar
-wget -O /etc/openvpn/443.conf "https://github.com/ingeniocolpro/openmultilogin/blob/master/443.conf"
+wget -O /etc/openvpn/443.conf "https://raw.githubusercontent.com/ingeniocolpro/openmultilogin/master/443.conf"
 service openvpn restart
 sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
@@ -103,7 +103,7 @@ service openvpn restart
 
 # configure openvpn client config
 cd /etc/openvpn/
-wget -O /etc/openvpn/443-client.ovpn "https://github.com/ingeniocolpro/openmultilogin/blob/master/443-client.conf"
+wget -O /etc/openvpn/443-client.ovpn "https://raw.githubusercontent.com/ingeniocolpro/openmultilogin/master/443-client.conf"
 sed -i $myip2 /etc/openvpn/443-client.ovpn;
 PASS= `cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
 useradd -M -s /bin/false InGenioColombia
